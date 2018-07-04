@@ -87,7 +87,7 @@ with tf.Session() as sess:
 	
 	print("Optimization Finished!")
 	
-	test_result = sess.run(pred, feed_dict={X: train_X})
+	test_result = sess.run(pred, feed_dict={X: test_X})
 	correct_pred = tf.equal(tf.argmax(test_result, 1), tf.argmax(train_Y, 1))
 
 	accuracy = tf.reduce_mean(tf.cast(correct_pred, "float"))
